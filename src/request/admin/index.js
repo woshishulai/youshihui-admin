@@ -6,7 +6,7 @@ const instance = axios.create({
   //开发
   baseURL: "/admin",
   //生产
-  // baseURL: 'http://apikzs.sc798.com',
+  // baseURL: "https://dm.sc798.com/service",
   timeout: 5000,
 });
 const Loading = useLoading();

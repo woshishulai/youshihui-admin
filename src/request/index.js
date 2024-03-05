@@ -4,9 +4,9 @@ import { useLoading, useUserInfo } from "@/store/store";
 const instance = axios.create({
   // axios 的一些配置，baseURL  timeout
   //开发
-  baseURL: "/api",
+  // baseURL: "/api",
   //生产
-  // baseURL: 'http://apikzs.sc798.com',
+  baseURL: "http://yshapi.sc798.com/api",
   timeout: 5000,
 });
 const Loading = useLoading();

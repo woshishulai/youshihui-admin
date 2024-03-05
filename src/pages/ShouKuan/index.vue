@@ -8,7 +8,9 @@ onMounted(() => {});
 </script>
 
 <template>
-  <div class="wrap"></div>
+  <div class="wrap">收款管理</div>
 </template>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+/* 在这里添加你的 Less 样式 */
+</style>
