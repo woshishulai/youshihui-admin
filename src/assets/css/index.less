@@ -1,8 +1,54 @@
-@import "reset.less";
-@import "antd.less";
-@import "iconfont.less";
+@import 'reset.less';
+@import 'antd.less';
+@import 'iconfont.less';
 
 .con-main-wrap {
-  width: 1300px;
-  margin: 0 auto;
+    width: 1240px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.card {
+    padding: 20px 16px;
+    background-color: #fff;
+    border-radius: 10px;
+    .title {
+        font-size: 15px;
+    }
+    .card-list {
+        .flex-row;
+        gap: 30px;
+        margin-top: 24px;
+        .card-item {
+            flex: 1;
+            .flex-row;
+            justify-content: space-between;
+            padding: 24px 20px;
+            border-radius: 10px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08),
+                inset 0 -2px 3px rgba(0, 0, 0, 0.1);
+            .info {
+                font-weight: 600;
+                font-size: 13px;
+            }
+            .num {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+    }
+}
+.header-page {
+    height: 100px;
+    padding-left: 20px;
+    .flex-col;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 20px;
+    border-bottom: 1px solid #666;
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 20px;
+    }
 }

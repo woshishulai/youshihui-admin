@@ -11,13 +11,22 @@ onMounted(() => {});
 <template>
     <div class="wrap">
         <div class="con-main-wrap">
-            <img :src="getImageUrl('logo.png')" alt="" />
+            <!-- <img :src="getImageUrl('logo.png')" alt="" /> -->
+            <!-- <p>优师汇</p> -->
+            <div style="display: flex; gap: 20px">
+                <p style="cursor: pointer" @click="router.push('/login')">登录</p>
+                <p style="cursor: pointer" @click="router.push('/change-password')">修改密码</p>
+                <p style="cursor: pointer" @click="router.push('/admin-login')"
+                    >聊天后台免密登录</p
+                ></div
+            >
             <a-dropdown>
                 <div class="user-info">
-                    <img :src="getImageUrl('logo.png')" alt="" />
+                    <!-- <img :src="getImageUrl('logo.png')" alt="" /> -->
+                    <p style="margin-right: 30px">优师汇</p>
                     <span>测试姓名</span>
                 </div>
-                <template #overlay>
+                <!-- <template #overlay>
                     <a-menu>
                         <a-menu-item>
                             <p class="header-nav" @click="router.push('/user')">
@@ -31,7 +40,7 @@ onMounted(() => {});
                             </p>
                         </a-menu-item>
                     </a-menu>
-                </template>
+                </template> -->
             </a-dropdown>
         </div>
     </div>

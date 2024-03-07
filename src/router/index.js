@@ -104,8 +104,8 @@ const navList = [
 const routesss = [
     {
         path: '',
-        redirect: '/shuju'
-        // component: () => import('@/pages/Home/index.vue')
+        // redirect: '/shuju'
+        component: () => import('@/pages/Home/index.vue')
     },
     {
         path: '/login',
@@ -140,4 +140,3 @@ const router = createRouter({
     }
 });
 export default router;
-export { navList };
