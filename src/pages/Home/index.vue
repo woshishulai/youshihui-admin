@@ -18,50 +18,42 @@ onMounted(async () => {
 const columns = [
     {
         title: '菜单名称',
-        width: 100,
         fixed: 'left',
         dataIndex: 'menu_name',
         key: 'menu_name'
     },
     {
         title: '类型',
-        width: 100,
         dataIndex: 'menu_type',
         key: 'menu_type'
     },
     {
         title: '排序',
-        width: 100,
         dataIndex: 'sort',
         key: 'sort'
     },
     {
         title: '状态',
-        width: 100,
         dataIndex: 'status',
         key: 'status    '
     },
     {
         title: 'WebUrl',
-        width: 140,
         dataIndex: 'web_url',
         key: 'web_url'
     },
     {
         title: '图标地址',
-        width: 140,
         dataIndex: 'ico_url',
         key: 'ico_url'
     },
     {
         title: '小图标样式  ',
-        width: 100,
         dataIndex: 'ico_class',
         key: 'ico_class'
     },
     {
         title: '备注',
-        width: 100,
         dataIndex: 'remark',
         key: 'remark'
     },
@@ -73,16 +65,31 @@ const columns = [
         key: 'change'
     }
 ];
-const handleClick = () => {
-    console.log(111);
-};
+const rowSelection = ref({
+    checkStrictly: false,
+    onChange: (selectedRowKeys, selectedRows) => {
+        console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+    },
+    onSelect: (record, selected, selectedRows) => {
+        console.log(record, selected, selectedRows);
+    },
+    onSelectAll: (selected, selectedRows, changeRows) => {
+        console.log(selected, selectedRows, changeRows);
+    }
+});
 </script>
 
 <template>
     <div class="wrap">
         <div class="con-main-wrap">
             <a-button type="primary">添加菜单测试</a-button>
-            <a-table :scroll="{ x: 1240, y: 1000 }" :dataSource="fetchData" :columns="columns">
+            <a-table
+                :scroll="{ x: 1240, y: 1000 }"
+                :row-selection="rowSelection"
+                childrenColumnName="levelList"
+                :dataSource="fetchData"
+                :columns="columns"
+            >
                 <template #bodyCell="{ column, record }">
                     <template v-if="column.key === 'menu_name'">
                         <input v-model="record.menu_name" type="text" />
